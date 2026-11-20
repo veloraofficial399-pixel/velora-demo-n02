@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Varun &amp; Devika · Wedding Reception</title>
+  <meta name="description" content="You are warmly invited to the wedding reception of Varun Mehra &amp; Devika Khanna · 13 February 2027 · Hotel Sea Pearl, Candolim Beach, North Goa.">
+  <meta name="theme-color" content="#0b1424">
+  <link rel="canonical" href="https://velora-demo-n02.velorain.workers.dev/">
+
+  <!-- Open Graph / link previews (WhatsApp, Facebook, iMessage…) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Varun &amp; Devika">
+  <meta property="og:url" content="https://velora-demo-n02.velorain.workers.dev/">
+  <meta property="og:title" content="The Wedding Reception of Varun Mehra &amp; Devika Khanna">
+  <meta property="og:description" content="13 February 2027 · 7:00 PM onwards · Hotel Sea Pearl, Candolim Beach, North Goa">
+  <meta property="og:image" content="https://velora-demo-n02.velorain.workers.dev/image/og-image.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="192">
+  <meta property="og:image:height" content="192">
+  <meta property="og:image:alt" content="Varun &amp; Devika wedding reception">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="The Wedding Reception of Varun Mehra &amp; Devika Khanna">
+  <meta name="twitter:description" content="13 February 2027 · 7:00 PM onwards · Hotel Sea Pearl, Candolim Beach, North Goa">
+  <meta name="twitter:image" content="https://velora-demo-n02.velorain.workers.dev/image/og-image.png">
+
+  <!-- Favicons -->
+  <link rel="icon" href="image/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
+  <link rel="manifest" href="image/site.webmanifest">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+  <link rel="preload" as="image" href="image/envelope-poster.webp">
+  <link rel="preload" as="image" href="image/hero.webp">
+  <link rel="preload" as="image" href="image/hero2.webp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-locked">
+
+  <!-- ============ 1. Envelope intro ============ -->
+  <div class="intro" id="intro" aria-label="Invitation envelope">
+    <canvas class="intro__backdrop" id="introBackdrop" aria-hidden="true"></canvas>
+    <div class="intro__frame">
+      <video class="intro__video" id="introVideo" playsinline preload="auto"
+             poster="image/envelope-poster.webp">
+        <source src="video/welcome.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="intro__veil" aria-hidden="true"></div>
+    <!-- the envelope video shows its own "Tap to open"; this invisible button makes the whole envelope tappable -->
+    <button class="intro__open" id="introOpen" type="button" aria-label="Open your invitation"></button>
+  </div>
+
+  <audio id="bgMusic" src="audio/tp1.mp3" preload="none" loop></audio>
+  <button class="music" id="musicToggle" type="button" aria-label="Mute music" aria-pressed="false" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path class="music__speaker" d="M4 9.5v5h3.5L12 18.5v-13L7.5 9.5z"/>
+      <path class="music__waves" d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/>
+      <path class="music__x" d="M16 9.5l5 5M21 9.5l-5 5"/>
+    </svg>
+  </button>
+
+  <main>
+    <!-- ============ 2. Hero ============ -->
+    <section class="hero" id="top" aria-label="The Wedding Reception of Varun Mehra and Devika Khanna">
+      <div class="hero__ambient" aria-hidden="true"></div>
+      <div class="hero__stage hero__stage--back">
+        <img class="hero__layer" src="image/hero.webp" alt="" width="853" height="1844" fetchpriority="high">
+      </div>
+      <canvas class="hero__lanterns" id="lanterns" aria-hidden="true"></canvas>
+      <div class="hero__stage hero__stage--front" id="heroFront">
+        <img class="hero__layer" src="image/hero2.webp" alt="Illustration of Varun and Devika dancing beneath fairy lights in a night garden, with a cellist and pianist playing" width="853" height="1844">
+        <div class="hero__glows" id="glows" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero__content">
+        <img class="hero__logo reveal-hero" src="image/logo-gold.webp" alt="V &amp; D monogram" width="276" height="297">
+        <p class="hero__eyebrow reveal-hero">The Wedding Reception of</p>
+        <h1 class="hero__names reveal-hero">
+          <span>Varun</span>
+          <span class="hero__amp">&amp;</span>
+          <span>Devika</span>
+        </h1>
+      </div>
+
+      <a class="hero__scroll reveal-hero" href="#save-the-date" aria-label="Scroll to Save the Date">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ Couple photo in the carved frame ============ -->
+    <section class="section section--night portrait" id="portrait">
+      <header class="portrait__head reveal">
+        <p class="eyebrow">Two Hearts, One Journey</p>
+        <h2 class="portrait__title">Hand in hand, forever begins</h2>
+      </header>
+      <figure class="portrait__frame reveal">
+        <img class="portrait__photo" src="image/couple-hands.webp" alt="Varun and Devika holding hands, wearing their rings" width="800" height="1199" loading="lazy" decoding="async">
+        <img class="portrait__border" src="image/venue-frame-portrait.webp" alt="" width="1000" height="1363" loading="lazy" decoding="async" aria-hidden="true">
+      </figure>
+      <p class="portrait__quote reveal">“In all the world, there is no heart for me like yours.”<span>— Maya Angelou</span></p>
+    </section>
+
+    <!-- ============ 3. Save the date ============ -->
+    <section class="section section--light std" id="save-the-date">
+      <div class="container reveal">
+        <div class="std__frame">
+          <img class="std__art" src="image/date-frame.webp" alt="" width="1040" height="1465" loading="lazy" decoding="async">
+          <h2 class="visually-hidden">Save the Date</h2>
+          <div class="std__date">
+            <p class="std__weekday">Saturday</p>
+            <p class="std__digits"><span>13</span><i aria-hidden="true"></i><span>02</span><i aria-hidden="true"></i><span>2027</span></p>
+            <p class="std__time">7:00 PM onwards</p>
+          </div>
+        </div>
+        <p class="std__line">An evening of love, laughter &amp; celebration</p>
+      </div>
+    </section>
+
+    <!-- ============ 4. Countdown ============ -->
+    <section class="section section--night countdown" id="countdown">
+      <div class="container reveal">
+        <p class="eyebrow">Counting Down</p>
+        <div class="countdown__grid" role="timer" aria-live="off">
+          <div class="countdown__unit"><span class="countdown__num" data-unit="days">00</span><span class="countdown__label">Days</span></div>
+          <div class="countdown__unit"><span class="countdown__num" data-unit="hours">00</span><span class="countdown__label">Hours</span></div>
+          <div class="countdown__unit"><span class="countdown__num" data-unit="minutes">00</span><span class="countdown__label">Minutes</span></div>
+          <div class="countdown__unit"><span class="countdown__num" data-unit="seconds">00</span><span class="countdown__label">Seconds</span></div>
+        </div>
+        <p class="countdown__done" hidden>The celebration has begun — thank you for being with us.</p>
+        <p class="countdown__when">13 February 2027 · 7:00 PM</p>
+      </div>
+    </section>
+
+    <!-- ============ 5. Event details ============ -->
+    <section class="section section--ivory details" id="details">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">The Celebration</p>
+          <h2 class="section__title">Reception Details</h2>
+        </header>
+      </div>
+      <div class="birds-lane" id="birdsLane" aria-hidden="true"></div>
+      <div class="details__lights" aria-hidden="true">
+        <picture>
+          <source media="(min-width: 761px)" srcset="image/string-lights-wide.webp" width="1400" height="203">
+          <img src="image/string-lights.webp" alt="" width="1400" height="572" loading="lazy" decoding="async">
+        </picture>
+        <div class="bulbs" id="bulbs"></div>
+      </div>
+      <div class="container">
+        <dl class="event reveal">
+          <div class="event__item">
+            <dt>Date</dt>
+            <dd>13 February 2027<span>Saturday</span></dd>
+          </div>
+          <div class="event__item">
+            <dt>Time</dt>
+            <dd>7:00 PM onwards</dd>
+          </div>
+          <div class="event__item">
+            <dt>Venue</dt>
+            <dd>Hotel Sea Pearl<span>Candolim Beach, Candolim<br>North Goa – 403515</span></dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="event__art reveal">
+        <img src="image/reception-art.webp" alt="Illustration of a candlelit reception dinner table" width="893" height="743" loading="lazy" decoding="async">
+      </figure>
+    </section>
+
+    <!-- ============ 6. RSVP ============ -->
+    <section class="section section--night rsvp" id="rsvp">
+      <img class="garland garland--top garland--back" src="image/flower-garland.webp" alt="" width="1400" height="356" loading="lazy" decoding="async" aria-hidden="true">
+      <img class="garland garland--top" src="image/flower-garland.webp" alt="" width="1400" height="356" loading="lazy" decoding="async" aria-hidden="true">
+      <div class="leaves" id="leaves" aria-hidden="true"></div>
+      <div class="container container--narrow">
+        <header class="section__head reveal">
+          <p class="eyebrow">Kindly Reply</p>
+          <h2 class="section__title">RSVP</h2>
+          <div class="ornament" aria-hidden="true"><i></i><b></b><i></i></div>
+          <p class="section__lede">Your presence would make our evening complete. Please let us know if you can join us.</p>
+        </header>
+
+        <form class="rsvp__form reveal" id="rsvpForm" novalidate>
+          <div class="field field--line">
+            <label for="rsvpName">Your Name</label>
+            <input id="rsvpName" name="name" type="text" autocomplete="name" required maxlength="80" placeholder="Full name">
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+
+          <fieldset class="field field--choice">
+            <legend>Will you attend?</legend>
+            <div class="choice">
+              <label class="choice__opt">
+                <input type="radio" name="attending" value="yes" required>
+                <span>Joyfully Accept</span>
+              </label>
+              <label class="choice__opt">
+                <input type="radio" name="attending" value="no">
+                <span>Regretfully Decline</span>
+              </label>
+            </div>
+            <p class="field__error" aria-live="polite"></p>
+          </fieldset>
+
+          <button class="btn btn--cta btn--gold" type="submit">
+            <span class="btn__label">Send RSVP</span>
+          </button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="rsvp__thanks" id="rsvpThanks" hidden tabindex="-1">
+          <img src="image/logo-gold.webp" alt="" width="276" height="297">
+          <h3 class="rsvp__thanks-title"></h3>
+          <p class="rsvp__thanks-text"></p>
+          <button class="link-btn" type="button" id="rsvpEdit">Update my response</button>
+        </div>
+      </div>
+      <img class="garland garland--bottom garland--back" src="image/flower-garland.webp" alt="" width="1400" height="356" loading="lazy" decoding="async" aria-hidden="true">
+      <img class="garland garland--bottom" src="image/flower-garland.webp" alt="" width="1400" height="356" loading="lazy" decoding="async" aria-hidden="true">
+    </section>
+
+    <!-- ============ 7. Families ============ -->
+    <section class="section section--ivory families" id="families">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">With the Blessings of</p>
+          <h2 class="section__title">Our Families</h2>
+          <div class="ornament ornament--dark" aria-hidden="true"><i></i><b></b><i></i></div>
+        </header>
+        <div class="families__grid">
+          <article class="family reveal">
+            <p class="family__role">The Groom</p>
+            <h3 class="family__name">Varun Mehra</h3>
+            <p class="family__rel">Son of</p>
+            <p class="family__parents">Neha Mehra <span>&amp;</span> Rajiv Mehra</p>
+            <div class="family__contact">
+              <span class="family__contact-label">Contact</span>
+              <a href="tel:+917025423395">70254 23395</a>
+              <a href="tel:+917025423395">70254 23395</a>
+            </div>
+          </article>
+          <div class="families__divider" aria-hidden="true"></div>
+          <article class="family reveal">
+            <p class="family__role">The Bride</p>
+            <h3 class="family__name">Devika Khanna</h3>
+            <p class="family__rel">Daughter of</p>
+            <p class="family__parents">Pooja Khanna <span>&amp;</span> Vikram Khanna</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. Map ============ -->
+    <section class="section section--night venue" id="venue">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Finding Your Way</p>
+          <h2 class="section__title">The Venue</h2>
+        </header>
+      </div>
+      <div class="venue__box reveal">
+        <div class="venue__map" id="venueMap">
+          <button class="venue__map-load" type="button" id="mapLoad">
+            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 43s-13-12.4-13-23a13 13 0 0 1 26 0c0 10.6-13 23-13 23z"/><circle cx="24" cy="20" r="4.5"/></svg>
+            <span>Loading map…</span>
+          </button>
+        </div>
+      </div>
+      <div class="container venue__info reveal">
+        <h3 class="venue__name">Hotel Sea Pearl</h3>
+        <p class="venue__addr">Candolim Beach, Candolim, Bardez, North Goa, Goa – 403515</p>
+        <a class="venue__link" href="https://www.google.com/maps/dir/?api=1&amp;destination=Hotel+Sea+Pearl%2C+Candolim+Beach%2C+North+Goa%2C+403515" target="_blank" rel="noopener">
+          Get Directions
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ 9. Wishes ============ -->
+    <section class="section section--ivory wishes" id="wishes">
+      <div class="container">
+        <header class="section__head reveal">
+          <p class="eyebrow">Love &amp; Blessings</p>
+          <h2 class="section__title wishes__title">Wishes for the Couple</h2>
+          <p class="section__lede">Leave a few words of love for Varun &amp; Devika to treasure.</p>
+        </header>
+
+        <form class="wishes__form reveal" id="wishForm" novalidate>
+          <div class="field field--line">
+            <label for="wishName">Your Name</label>
+            <input id="wishName" name="name" type="text" autocomplete="name" required maxlength="60" placeholder="Full name">
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <div class="field field--line">
+            <label for="wishMsg">Your Wish</label>
+            <textarea id="wishMsg" name="message" rows="3" required maxlength="500" placeholder="Wishing you a lifetime of…"></textarea>
+            <p class="field__count"><span id="wishCount">0</span> / 500</p>
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <button class="btn btn--cta btn--navy" type="submit"><span class="btn__label">Send Wish</span></button>
+          <p class="form__status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="wishes__list" id="wishList" aria-live="polite"></div>
+        <p class="wishes__empty" id="wishEmpty">Be the first to send your blessings.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 10. Footer ============ -->
+  <footer class="footer">
+    <div class="container footer__inner reveal">
+      <img class="footer__logo" src="image/logo-gold.webp" alt="V &amp; D monogram" width="276" height="297" loading="lazy">
+      <p class="footer__names">Varun <span class="amp">&amp;</span> Devika</p>
+      <p class="footer__date">13 · 02 · 2027</p>
+      <p class="footer__msg">Thank you for your love and blessings, and for being part of our story.</p>
+    </div>
+    <div class="footer__bar">
+      <p class="footer__sign">With love, the Mehra family</p>
+      <p class="footer__credit">Invitation crafted by <a href="https://wa.me/917025423395?text=Hi%20Velora%21%20I%20saw%20your%20wedding%20invitation%20templates%20and%20I%27m%20interested.%20I%27d%20like%20to%20get%20a%20wedding%20e-invitation%20made%20for%20us.%20Could%20you%20please%20share%20the%20details%3F" target="_blank" rel="noopener">Velora</a></p>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
